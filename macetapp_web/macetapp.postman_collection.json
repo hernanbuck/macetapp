@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "250e92da-e8f1-40f3-a132-f7200a9b799b",
+		"name": "macetapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Metricas By codMaceta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codMaceta",
+							"value": "ABC123ABC",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/metrics/getMetricByCodMaceta",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metrics",
+						"getMetricByCodMaceta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Last Metric By codMaceta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codMaceta",
+							"value": "ABC123ABC",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/metrics/getLastMetricByCodMaceta",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metrics",
+						"getLastMetricByCodMaceta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Metric with codMaceta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "humedad",
+							"value": "450",
+							"type": "text"
+						},
+						{
+							"key": "codMaceta",
+							"value": "ABC123ABC",
+							"type": "text"
+						},
+						{
+							"key": "riego",
+							"value": "si",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/metrics/saveMetricByCodMaceta",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"metrics",
+						"saveMetricByCodMaceta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exist User in DB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "uid",
+							"value": "XmeDU4C7XyWS5WW1f6OMvD6lzW92",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/exist/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"exist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert new planta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Maceta en oficina",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "XmeDU4C7XyWS5WW1f6OMvD6lzW92",
+							"type": "text"
+						},
+						{
+							"key": "codMaceta",
+							"value": "ABC123ABC",
+							"type": "text"
+						},
+						{
+							"key": "tipoPlantaID",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/planta/nuevaPlanta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"planta",
+						"nuevaPlanta"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
