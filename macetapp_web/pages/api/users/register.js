@@ -19,7 +19,7 @@ export default function userHandler(req,res) {
           return;
         }
         client.query(
-            'insert into clientes ("GoogleID","FechaAlta","TipoClienteID") values ($1,now(),3)',
+            'insert into clientes ("GoogleID","FechaAlta","TipoClienteID") values ($1,now(),1)',
           [uid],
           (err, rest) => {
             if (err) {

@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCm9_8mlT2RqN7DMI9hZgEoiwSWwAZl-wQ",
-  authDomain: "macetapp-b67fa.firebaseapp.com",
-  projectId: "macetapp-b67fa",
-  storageBucket: "macetapp-b67fa.appspot.com",
-  messagingSenderId: "1017624374907",
-  appId: "1:1017624374907:web:e871658e252fbfb86cfcde",
+  apiKey: process.env.NEXT_PUBLIC_FB_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FB_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FB_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FB_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FB_APP_ID,
 };
 
-export const firebseApp = initializeApp(firebaseConfig);
+export const firebaseApp = initializeApp(firebaseConfig);

@@ -26,7 +26,7 @@ export default function userHandler(req,res) {
           return;
         }
         client.query(
-            'insert into plantas ("codMaceta","nombre","tipoplantaid","fechaalta") values ($1,$2,$3,now())',
+            'insert into plantas ("codMaceta","nombre","tipoPlantaID","fechaAlta") values ($1,$2,$3,now())',
           [codMaceta, nombre,tipoPlantaID],
           (err, rest) => {
             if (err) {
@@ -38,7 +38,7 @@ export default function userHandler(req,res) {
           );    
       
         client.query(
-            'insert into cliente_x_planta ("codMaceta","ClienteID") values ($1,(select "ClienteID" from clientes where clientes."GoogleID" like $2))',
+            'insert into cliente_x_planta ("codMaceta","GoogleID") values ($1,$2)',
         [codMaceta,uid],
         (err, rest) => {
             if (err) {

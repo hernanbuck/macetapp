@@ -20,7 +20,7 @@ export default function userHandler(req, res) {
           return;
         }
         client.query(
-          'select count(clientes."ClienteID") AS exist from clientes where clientes."GoogleID" = $1',
+          'select count(clientes."GoogleID") AS exist from clientes where clientes."GoogleID" = $1',
           [uid],
           (err, rest) => {
             if (err) {
