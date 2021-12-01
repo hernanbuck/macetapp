@@ -14,7 +14,7 @@ const int rele = D2;
 int temp;
 int demora=0;
 byte pinLed = D4;
-const char* serverName = "http://192.168.0.11:3000/api/metrics/saveMetricByCodMaceta";
+const char* serverName = "http://macetapp.herokuapp.com/api/metrics";
 unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 ///**********************///
@@ -52,7 +52,11 @@ void setup()
 ///**********************///
 ///****** loop definition *******///
 void loop() {
+  delay(5000);
   ////**** Get Value by Sensor Humidity *//////
+  temp = analogRead(0); //connect sensor to Analog 0
+  Serial.println(temp); //print the value to serial port
+  delay(5000);
   temp = analogRead(0); //connect sensor to Analog 0
   Serial.println(temp); //print the value to serial port
   ///**********************///
@@ -66,7 +70,7 @@ void loop() {
       // Specify content-type header
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");
       // Data to send with HTTP POST
-      String httpRequestData = "humedad="+ String(temp) +"&codMaceta="+ String(codMaceta) + "&riego=si";           
+      String httpRequestData = "humidity="+ String(temp) +"&PlantCode="+ String(codMaceta) + "&watering=si";          
       // Send HTTP POST request
       int httpResponseCode = http.POST(httpRequestData);
       Serial.print("HTTP Response code: ");
@@ -100,7 +104,7 @@ void loop() {
       // Specify content-type header
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");
       // Data to send with HTTP POST
-      String httpRequestData = "humedad="+ String(temp) +"&codMaceta="+ String(codMaceta) + "&riego=no";           
+      String httpRequestData = "humidity="+ String(temp) +"&PlantCode="+ String(codMaceta) + "&watering=no";           
       // Send HTTP POST request
       int httpResponseCode = http.POST(httpRequestData);
       Serial.print("HTTP Response code: ");

@@ -1,0 +1,1 @@
+heroku pg:psql postgresql-objective-13248 --app macetapp
